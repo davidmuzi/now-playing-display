@@ -1,0 +1,6 @@
+/node_modules/
+.env
+todo.md
+*.log
+*.node-persist/
+/public/*.js
