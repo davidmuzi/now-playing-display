@@ -6,8 +6,8 @@ A now playing screen to display content from Apple Music. The idea, inspiration 
 
 ## Requirements
 
-- A device that can load a webpage (Raspberry Pi, iPad, ...)
-- A device that can authenticate to Apple Music (can be the device)
+- A device with a web browser, Node and Yarn to be used as the display-device (Raspberry Pi, iPad, ...)
+- A device that can authenticate to Apple Music (can use a different device if display-device doesnt have keyboard)
 - An Apple Developer account to generate an Apple Music developer token
 
 ## Setup
@@ -15,7 +15,7 @@ A now playing screen to display content from Apple Music. The idea, inspiration 
 1. Clone this repo, `cd` into its directory, and download its depedencies with
 `yarn install`
 
-2. Generate an Apple Music developer token using Apple's [instructions](https://developer.apple.com/documentation/applemusicapi/getting_keys_and_creating_tokens), and enter it in an `.env` file
+2. Generate an Apple Music developer token using Apple's [instructions](https://developer.apple.com/documentation/applemusicapi/getting_keys_and_creating_tokens), and enter it in an `.env` file at the root folder
 
 ```
 DEV_TOKEN=YOUR_DEV_TOKEN_HERE
@@ -30,8 +30,10 @@ DEV_TOKEN=YOUR_DEV_TOKEN_HERE
 ## Running it
 
 You can run this app on the device you want to display the now playing content using `http://your-domain/login.html`. 
-Click the Login button to authenticate to Apple Music, or scan the QR code on another device.
+Click the Login button to authenticate to Apple Music, or scan the QR code on another device with keyboard entry.
 Once authenticated, the user token will be persisted on the host device and used to query Apple Music's API for last played metadata.
+
+If you need to logout, load `http://your-domain/logout` in your browser.
 
 ## Acknowledgements
 - [raspberry-pi-now-playing](https://github.com/jasontate/raspberry-pi-now-playing)

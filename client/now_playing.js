@@ -16,6 +16,12 @@ async function lastPlayed(token) {
 
 async function update() {
     const token = await fetchKey();
+
+    if (token.userToken == undefined) {
+        window.location.href = '/login.html';
+        return;
+    }
+
     const json = await lastPlayed(token);
 
     const {name, albumName, artistName, artwork} = json.data[0].attributes;

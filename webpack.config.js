@@ -10,7 +10,6 @@ export default {
         now_playing: './client/now_playing.js',
     },
     output: {
-      //filename: 'login.js',
       path: path.resolve('./public'),
     },
     mode: 'development',

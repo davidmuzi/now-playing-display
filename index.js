@@ -15,6 +15,11 @@ const port = process.env.HOST_PORT || 3000
 await storage.init()
 const router = new Router();
 
+router.get('/logout', async (ctx, _) => {
+    await storage.removeItem('token');
+    ctx.response.redirect('/login.html');
+});
+
 router.post('/token', async (ctx, next) => {
     await storage.setItem('token', ctx.request.body.token);
     ctx.response.status = 200;
