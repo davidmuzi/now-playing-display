@@ -104,7 +104,7 @@ h1 {
 }
 
 .artwork {
-	background-image: url("<?php echo $trackInfo['albumArt']; ?>");
+	background-image: url("");
 	background-position: bottom;
 	background-repeat: no-repeat;
 	background-size: 120%;

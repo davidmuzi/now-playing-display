@@ -32,6 +32,7 @@ async function update() {
     document.getElementById("album").innerHTML = albumName;
     document.getElementById("count").hidden = true;
     document.getElementById("albumArt").src = artUrl;
+    document.getElementById("bg").style.backgroundImage = `url('${artUrl}')`;
 
     setTimeout(update, 2000);
 }
